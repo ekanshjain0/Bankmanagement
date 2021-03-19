@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        section{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+            overflow:hidden;
+
+        }
+        section .text{
+            position: relative;
+            color: #fff;
+            margin: 40px;
+            max-width: 800px;
+            user-select: none;
+            font-size: 3.5rem;
+            
+        }
+        section .text span{
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
+        }
+        section .text span.active{
+        animation: smoke 2s linear forwards;
+        
+        transform-origin: bottom;
+        }
+        @keyframes smoke{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+
+                
+            }
+            50%{
+                opacity: 1;
+                pointer-events: none;
+                
+            }
+            100%{
+                opacity: 0;
+                filter: blur(20px);
+                transform: translateX(300px) translateY(-100px) rotate(720deg) scale(10);
+                
+            }
+        }
+        .button{
+            position: relative;
+            color: #fff;
+            margin-top: 100px;
+            margin-left: -150px;
+            max-width: 800px;
+            user-select: none;
+            font-size: 1.5rem;
+            background:initial;
+            outline: none;
+            border: none;
+            
+        }
+        .button:hover{
+            text-decoration: underline;
+            position: relative;
+            color: #fff;
+            margin-top: 100px;
+            margin-left: -150px;
+            max-width: 800px;
+            user-select: none;
+            font-size: 1.5rem;
+            
+        }
+        .smokee{
+            text-decoration: underline;
+            position: relative;
+            color: #fff;
+            margin-top: 500px;
+            margin-left: -150px;
+            max-width: 800px;
+            user-select: none;
+            font-size: 1.5rem;
+            animation: smokee 2s linear forwards;
+            animation-iteration-count: infinite;
+        
+        transform-origin: bottom;
+        }
+        
+        @keyframes smokee{
+            0%{
+                opacity: 1;
+                filter: blur(10px);
+                transform: translateX(0) translateY(0) rotate(0deg) scale(10);
+
+                
+            }
+            10%{
+                color: rgb(30, 255, 0);
+             
+
+            }
+            20%{
+                color: rgb(59, 206, 174);
+             
+            }
+            30%{
+                color: rgb(94, 96, 223);
+             
+            }
+            40%{
+                color: rgb(210, 57, 224);
+              
+            }
+            50%{
+                opacity: 1;
+                pointer-events: none;
+                color: red;
+                
+            }
+            60%{
+                color: rgb(226, 79, 99);
+             
+            }
+            70%{
+                color: rgb(43, 226, 141);
+             
+            }
+            80%{
+                color: rgb(48, 219, 196);
+             
+            }
+            90%{
+                color: rgb(197, 31, 58);
+             
+            }
+            100%{
+                opacity: 0.5;
+                filter: blur(50px);
+                transform: translateX(300px) translateY(0) rotate(0deg) scale(10);
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <Section>
+        <p class="text">
+            <span> W</span><span> E</span><span> L</span><span> C</span><span> O</span><span> M</span><span> E</span>
+        </p>
+        <button class="button" >   Let's Begin</button>
+        <p class="smokee">Lorem ipsum dolor sit amet.</p>
+    </Section>
+    <script>
+
+        const letters=document.querySelectorAll('span');
+        for(let i=0;i<letters.length;i++)
+        {
+            letters[i].addEventListener("mouseover",function(){
+                letters[i].classList.add('active')
+            })
+        }
+    </script>
+</body>
+</html>
